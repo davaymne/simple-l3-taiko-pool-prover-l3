@@ -1,0 +1,35 @@
+version: "3.4"
+x-logging:
+  &logging
+  logging:
+    options:
+      max-size: 10m
+      max-file: "3"
+services:
+  l3_pool_prover:
+    image: ghcr.io/davaymne/taiko-pool-proverd:main
+    restart: unless-stopped
+    command:
+      - --proverEndpoint
+      - "${PROVER_ENDPOINT}"
+      - --proverWallet
+      - "${PROVER_WALLET}"
+    <<: *logging
+  l3_zkevm-chain-prover-rpcd:
+    image: gcr.io/evmchain/eldfell-proverd:latest
+    restart: unless-stopped
+    ports:
+      - "${PROVER_PORT}:9000"
+    pull_policy: always
+    env_file:
+      - .env
+    volumes:
+      - ./scripts/:/script
+      - l3_zkevm_chain_prover_rpcd_data:/data
+    entrypoint:
+      - /bin/sh
+      - -c
+      - "/script/start-zkevm-chain-rpcd.sh"
+    <<: *logging
+volumes:
+  l3_zkevm_chain_prover_rpcd_data:
