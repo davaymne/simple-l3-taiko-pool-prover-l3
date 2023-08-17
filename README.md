@@ -1,6 +1,6 @@
-# simple-taiko-pool-prover
+# simple-l3-taiko-pool-prover
 
-This is a Taiko pool prover docker package, which allow you to join the Davaymne Taiko pool with awesome prove-runners.
+This is a L3 Taiko pool prover docker package, which allow you to join the Davaymne Taiko pool with awesome prove-runners.
 
 Your node will be added in the list of nodes which will be randomly selected to prove Taiko blocks.
 
