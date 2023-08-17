@@ -29,8 +29,7 @@ Pool manager will assess your node against HW requirements and if it meets will 
 Once new block which requires prove is detected, prover endpoint will be selected from the list and get assigned block to prove.
 Prover generate prove and submit it to Taiko Pool, which will be submitted to the contract using Pool Wallet.
 
-<img width="715" alt="Screenshot 2023-08-16 at 21 32 51" src="https://github.com/davaymne/simple-taiko-pool-prover/assets/29555611/f56bac16-b22f-4dcc-b66e-5dd6035734b7">
-
+<img width="707" alt="Screenshot 2023-08-17 at 02 09 33" src="https://github.com/davaymne/simple-l3-taiko-pool-prover/assets/29555611/e00691a4-3b2f-4579-94c3-3e9d05a432af">
 
 Rewards:
 
